@@ -1,0 +1,7 @@
+version: '2.1'
+services:
+  azure-cli:
+    container_name: azure-cli-2.0
+    extends:
+      file: docker/base.yml
+      service: base
