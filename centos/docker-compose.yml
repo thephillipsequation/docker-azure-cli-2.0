@@ -2,6 +2,9 @@ version: '2.1'
 services:
   azure-cli:
     container_name: azure-cli-2.0
+    privileged: true
+    volumes: /sys/fs/cgroup:/sys/fs/cgroup:ro
     extends:
       file: docker/base.yml
       service: base
+
