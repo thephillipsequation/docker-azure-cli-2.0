@@ -1,0 +1,11 @@
+version: '2.1'
+services:
+  ansible-azure:
+    container_name: ansible-azure
+    privileged: true
+    volumes: 
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    extends:
+      file: docker/base.yml
+      service: base
+
