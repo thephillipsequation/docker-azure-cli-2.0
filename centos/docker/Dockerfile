@@ -8,9 +8,7 @@ RUN yum update -y &&                \
     yum install -y vim              \
                 gcc                 \
                 libffi-devel        \
-                python              \
                 python-devel        \
-                python-distribute   \
                 python-setuptools   \
                 openssl-devel       
 
@@ -18,4 +16,6 @@ RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
 RUN python get-pip.py
 VOLUME [ "/sys/fs/cgroup", "/run" ]
 RUN pip install azure-cli 
+RUN rpm -e --nodeps python-setuptools
+
 ENV EDITOR vim
